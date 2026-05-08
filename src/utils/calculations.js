@@ -17,7 +17,7 @@ export const calculateDistance = (lat1, lon1, lat2, lon2) => {
 export const calculateSpeed = (distance, timeSeconds) => {
   if (timeSeconds === 0) return 0;
   const hours = timeSeconds / 3600;
-  return (distance / hours).toFixed(2);
+  return Number((distance / hours).toFixed(2));
 };
 
 // Format coordinates

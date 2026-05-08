@@ -61,9 +61,9 @@ export const ISSTracker = () => {
       if (prev && typeof prev.lat === 'number' && typeof prev.lon === 'number') {
         const distance = calculateDistance(prev.lat, prev.lon, latNum, lonNum);
         const timeSeconds = (Date.now() - (prev.timestamp || Date.now())) / 1000;
-        const speedKmh = timeSeconds > 0 ? calculateSpeed(distance, timeSeconds) : 0;
+        const speedKmh = timeSeconds > 0 ? Number(calculateSpeed(distance, timeSeconds)) : 0;
         console.debug('PrevRef:', prev, 'Distance (km):', distance, 'Time (s):', timeSeconds, 'Speed (km/h):', speedKmh);
-        setSpeed(speedKmh);
+        setSpeed(Number.isFinite(speedKmh) ? speedKmh : 0);
       }
 
       // Update location (store will coerce again, but ensure numbers here)
