@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useChatStore, useISSStore, useNewsStore } from '../../utils/store.js';
-import { aiApi } from '../../utils/aiApi.js';
+import aiApi from '../../utils/aiApi.js';
 import { MessageCircle, X, Send, Trash2 } from 'lucide-react';
 
 export const Chatbot = () => {

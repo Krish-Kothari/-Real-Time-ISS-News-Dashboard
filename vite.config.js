@@ -24,6 +24,11 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/api\/iss-passes/, '/iss-passes'),
         logLevel: 'debug',
       },
+      '/api/ai-api': {
+        target: 'http://localhost:3001',
+        changeOrigin: true,
+        logLevel: 'debug',
+      },
     },
   },
 })

@@ -134,7 +134,7 @@ export const ISSTracker = () => {
         </div>
         <div className="card p-4">
           <div className="text-sm text-slate-600 dark:text-slate-400">Speed (km/h)</div>
-          <div className="text-2xl font-bold">{speed}</div>
+          <div className="text-2xl font-bold">{typeof speed === 'number' && Number.isFinite(speed) ? speed.toFixed(2) : '0.00'}</div>
         </div>
         <div className="card p-4">
           <div className="text-sm text-slate-600 dark:text-slate-400">Location</div>

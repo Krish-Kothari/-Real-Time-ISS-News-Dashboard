@@ -3,7 +3,7 @@ import axios from 'axios';
 const HF_API_BASE = 'https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2';
 const HF_TOKEN = import.meta.env.VITE_AI_TOKEN;
 
-export const aiApi = {
+const aiApi = {
   // Call Hugging Face API for chat responses
   generateResponse: async (prompt, context = '') => {
     try {
